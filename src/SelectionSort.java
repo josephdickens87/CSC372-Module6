@@ -36,7 +36,7 @@ public class SelectionSort
 
         System.out.println(namesArrayList);
 
-        // print the array out after being sorted.
+        // print the array out after being sortedd
         //System.out.println(Arrays.toString(namesArray));
 
     }
