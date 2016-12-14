@@ -22,7 +22,7 @@ public class SelectionSort
         }
 
         // assignment said ten names, so this is to limit input amount
-        while(namesArrayList.size()<10);
+        while(namesArrayList.size()<2);
 
         // print the original array list
         System.out.println(namesArrayList);
@@ -32,31 +32,33 @@ public class SelectionSort
         namesArray = namesArrayList.toArray(namesArray);
 
         // selection sort it
-        selectionSorter(namesArray);
+        selectionSorter(namesArrayList);
+
+        System.out.println(namesArrayList);
 
         // print the array out after being sorted
-        System.out.println(Arrays.toString(namesArray));
+        //System.out.println(Arrays.toString(namesArray));
     }
 
 
-    public static void selectionSorter(String[] array)
+    public static void selectionSorter(ArrayList<String> array)
     {
-        for (int i = 0; i < array.length - 1; ++i)
+        for (int i = 0; i < array.size() - 1; i++)
         {
             int minIndex = i;
 
-            for (int j = i + 1; j < array.length; ++j)
+            for (int j = i + 1; j < array.size(); j++)
             {
 
-                if (array[j].compareTo(array[minIndex]) < 0)
+                if (array.get(j).compareTo(array.get(minIndex)) < 0)
                 {
                     minIndex = j;
                 }
             }
 
-            String temp = array[i];
-            array[i] = array[minIndex];
-            array[minIndex] = temp;
+            String temp = array.get(i);
+            array.set(i,array.get(minIndex));
+            array.set(minIndex,temp);
         }
     }
 }
